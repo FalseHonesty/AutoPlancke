@@ -7,8 +7,8 @@ function hypixelPlancke(name, game) {
 
     // return to break out of function
     return;
-    var generalStats = ""
   }
+  
 switch (game.toLowerCase()) {
     case "bb":
     case "BuildBattle":
@@ -117,8 +117,11 @@ switch (game.toLowerCase()) {
 
   // opens website
   var link = "http://plancke.io/hypixel/player/stats/" + name;
-  if (game != undefined) {link += "#" + game;}
-  print(java.awt.Desktop.getDesktop().browse(new java.net.URI(link)));
-  event.setCanceled(true);
+  
+  if (game != undefined) {
+    link += "#" + game;
+  }
+  
+  java.awt.Desktop.getDesktop().browse(new java.net.URI(link));
   ChatLib.chat("&aOpening &b" + link);
 }
